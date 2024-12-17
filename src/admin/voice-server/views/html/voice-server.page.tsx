@@ -118,7 +118,12 @@ export async function VoiceServerPage(props: { user: User }) {
                 </label>
               </dt>
               <dd>
-                <input type="text" name="mumblePassword" value={mumblePassword ?? ''} />
+                <input
+                  type="text"
+                  id="mumble-password"
+                  name="mumblePassword"
+                  value={mumblePassword ?? ''}
+                />
               </dd>
             </dl>
 
@@ -129,7 +134,12 @@ export async function VoiceServerPage(props: { user: User }) {
                 </label>
               </dt>
               <dd>
-                <input type="text" name="mumbleChannelName" value={mumbleChannelName ?? ''} />
+                <input
+                  type="text"
+                  id="mumble-channel-name"
+                  name="mumbleChannelName"
+                  value={mumbleChannelName ?? ''}
+                />
               </dd>
             </dl>
           </fieldset>

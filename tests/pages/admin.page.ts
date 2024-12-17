@@ -32,4 +32,13 @@ export class AdminPage {
         .click({ timeout: secondsToMilliseconds(1) })
     } catch (error) {}
   }
+
+  async configureVoiceServer(props: { host: string; password: string; channelName: string }) {
+    await this.page.goto('/admin/voice-server')
+    await this.page.getByLabel('Mumble').click()
+    await this.page.getByLabel('Server URL').fill(props.host)
+    await this.page.getByLabel('Server password').fill(props.password)
+    await this.page.getByLabel('Channel name').fill(props.channelName)
+    await this.page.getByRole('button', { name: 'Save' }).click()
+  }
 }
